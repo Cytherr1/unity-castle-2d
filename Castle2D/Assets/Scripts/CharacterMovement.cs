@@ -11,6 +11,7 @@ public class CharacterMovement : MonoBehaviour
     private bool isGrounded;
     public GameObject jumpPoint;
     float jumpTimer = 0f;
+    public float gravityMultiplier;
 
     private void Start()
     {
@@ -65,21 +66,21 @@ public class CharacterMovement : MonoBehaviour
         {
             maxSpeed = tempSpeed;
             jumpTimer = 0;
+            rb.gravityScale = 1.0f;
         }
         // gravity
 
-        if (jumpTimer > 0.2f)
+        if (jumpTimer > 0f)
         {
-            rb.gravityScale = jumpTimer*4;
+            rb.gravityScale = jumpTimer * gravityMultiplier;
         }
         else
         {
             rb.gravityScale = 1.0f;
         }
-        if(rb.gravityScale>5f)
+        if(rb.gravityScale>4f)
         {
-            rb.gravityScale = 5.1f;
+            rb.gravityScale = 4.1f;
         }
     }
-
 }
