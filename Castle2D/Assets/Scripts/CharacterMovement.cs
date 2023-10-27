@@ -78,9 +78,9 @@ public class CharacterMovement : MonoBehaviour
         {
             rb.gravityScale = 1.0f;
         }
-        if(rb.gravityScale>4f)
+        if(rb.gravityScale>7f)
         {
-            rb.gravityScale = 4.1f;
+            rb.gravityScale = 7.1f;
         }
     }
 }
